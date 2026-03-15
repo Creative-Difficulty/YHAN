@@ -1,3 +1,4 @@
+'use client'
 // chapterpage.tsx
 // YHAN – Chapters  ·  Map · Rolling chapter scroll · Apply CTA
 // Map rendered via Leaflet (loaded from CDN in a useEffect)

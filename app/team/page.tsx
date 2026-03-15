@@ -1,3 +1,4 @@
+'use client'
 // teampage.tsx
 // YHAN – Team Page  ·  3 co-founder cards
 
