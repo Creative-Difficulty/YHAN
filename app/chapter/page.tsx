@@ -5,11 +5,11 @@
 
 import { useState, useEffect, useRef } from "react";
 import type { Map as LeafletMap } from "leaflet";
-import { C } from "./Tokens";
-import { Eyebrow, H2 } from "./typography";
-import Nav from "./Nav";
-import Footer from "./footer";
-import ColorBar from "./ColorBar";
+import { C } from "../Tokens";
+import { Eyebrow, H2 } from "../typography";
+import Nav from "../Nav";
+import Footer from "../footer";
+import ColorBar from "../ColorBar";
 
 /* ─────────────────────────────────────────
    DATA

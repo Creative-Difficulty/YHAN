@@ -3,11 +3,11 @@
 // Only team-specific content lives here.
 // Nav, Footer, ColorBar, tokens, Typography → imported from /shared
 
-import { C } from "./Tokens";
-import { Eyebrow } from "./typography";
-import Nav from "./Nav";
-import Footer from "./footer";
-import ColorBar from "./ColorBar";
+import { C } from "../Tokens";
+import { Eyebrow } from "../typography";
+import Nav from "../Nav";
+import Footer from "../footer";
+import ColorBar from "../ColorBar";
 
 /* ─────────────────────────────────────────
    DATA
