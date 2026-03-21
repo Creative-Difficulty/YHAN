@@ -1,4 +1,4 @@
-import adapter from "@sveltejs/adapter-cloudflare";
+import adapter from "@sveltejs/adapter-netlify";
 import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -9,18 +9,14 @@ const config = {
             $components: "./src/lib/components",
         },
         adapter: adapter({
-            // See below for an explanation of these options
-            config: undefined,
-            platformProxy: {
-                configPath: undefined,
-                environment: undefined,
-                persist: undefined,
-            },
-            fallback: "plaintext",
-            routes: {
-                include: ["/*"],
-                exclude: ["<all>"],
-            },
+            // if true, will create a Netlify Edge Function rather
+            // than using standard Node-based functions
+            edge: false,
+
+            // if true, will split your app into multiple functions
+            // instead of creating a single one for the entire app.
+            // if `edge` is true, this option cannot be used
+            split: false,
         }),
     },
 };
