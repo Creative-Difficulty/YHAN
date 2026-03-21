@@ -1,14 +1,29 @@
 <script lang="ts">
-  import { onMount } from "svelte";
+  type Chapter = {
+    id: number;
+    color: string;
+    flag: string;
+    lat: number;
+    lng: number;
+    city: string;
+    country: string;
+    schools: number;
+    students: number;
+    status: string;
+    founded: string;
+    highlight: string;
+    twBorderClass: string;
+    twBorderLClass: string;
+    twShadowClass: string;
+    twTextClass: string;
+  };
 
-  let { chapters = [] } = $props<{ chapters?: any[] }>();
-  
-  let mapRef = $state<HTMLDivElement>();
-  let leafletRef: any = null;
+  let { chapters = [] } = $props<{ chapters?: Chapter[] }>();
   let selectedId = $state<number | null>(null);
   
-  onMount(() => {
-    let cleanup: (() => void) | undefined;
+  function leafletMap(node: HTMLElement, chaptersData: Chapter[]) {
+    let unmounted = false;
+    let leafletRef: any = null;
 
     const initMap = async () => {
       if (!(window as any).L) {
@@ -20,10 +35,12 @@
         });
       }
 
-      const L = (window as any).L;
-      if (!mapRef || leafletRef) return;
+      if (unmounted) return;
 
-      const map = L.map(mapRef, { center: [20, 10], zoom: 2, scrollWheelZoom: false });
+      const L = (window as any).L;
+      if (leafletRef) return;
+
+      const map = L.map(node, { center: [20, 10], zoom: 2, scrollWheelZoom: false });
       L.tileLayer("https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png", {
         attribution: "© OpenStreetMap © CARTO",
         subdomains: "abcd",
@@ -32,7 +49,7 @@
       
       leafletRef = map;
 
-      chapters.forEach((ch: any) => {
+      chaptersData.forEach((ch) => {
         const icon = L.divIcon({
           html: `<div style="width:36px;height:36px;background:${ch.color};border:3px solid white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;box-shadow:0 4px 14px ${ch.color}60;cursor:pointer;">${ch.flag}</div>`,
           className: "",
@@ -46,21 +63,20 @@
             selectedId = ch.id;
           });
       });
-
-      cleanup = () => {
-        if (leafletRef) {
-          leafletRef.remove();
-          leafletRef = null;
-        }
-      };
     };
 
     initMap();
 
-    return () => {
-      if (cleanup) cleanup();
+    return {
+      destroy() {
+        unmounted = true;
+        if (leafletRef) {
+          leafletRef.remove();
+          leafletRef = null;
+        }
+      }
     };
-  });
+  }
 </script>
 
 <svelte:head>
@@ -70,7 +86,7 @@
 <div class="interactive-map-section z-0">
   <!-- Map -->
   <div
-    bind:this={mapRef}
+    use:leafletMap={chapters}
     class="w-full h-[480px] rounded-[24px] overflow-hidden shadow-[0_8px_40px_rgba(35,44,61,0.12)] border-[1.5px] border-yhan-border"
   ></div>
 
@@ -81,7 +97,7 @@
     </h3>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[18px]">
-      {#each chapters as ch}
+      {#each chapters as ch (ch.id)}
         {@const active = selectedId === ch.id}
         <button
           type="button"

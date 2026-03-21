@@ -62,13 +62,13 @@
       </h2>
       <p class="font-sans text-[1.02rem] leading-[1.82] text-yhan-mid font-medium mb-[28px] max-w-[500px] mx-auto lg:mx-0">{founder.bio}</p>
       <div class="flex gap-[8px] flex-wrap justify-center lg:justify-start mb-[28px]">
-        {#each founder.badges as b}
-          <span class={`font-sans text-[0.75rem] font-bold py-[5px] px-[14px] rounded-full ${founder.twBgLight} ${founder.twColor} border-[1.5px] ${founder.twBorderLight}`}>
+        {#each founder.badges as b (b)}
+          <span class="font-sans text-[0.75rem] font-bold py-[5px] px-[14px] rounded-full {founder.twBgLight} {founder.twColor} border-[1.5px] {founder.twBorderLight}">
             {b}
           </span>
         {/each}
       </div>
-      <a href={`mailto:${founder.email}`} class={`inline-flex items-center justify-center gap-[8px] py-[13px] px-[24px] rounded-full font-sans font-extrabold text-[0.9rem] no-underline ${founder.twBg} text-white ${founder.twShadow}`}>
+      <a href={`mailto:${founder.email}`} class="inline-flex items-center justify-center gap-[8px] py-[13px] px-[24px] rounded-full font-sans font-extrabold text-[0.9rem] no-underline {founder.twBg} text-white {founder.twShadow}">
         ✉ {founder.email}
       </a>
     </div>

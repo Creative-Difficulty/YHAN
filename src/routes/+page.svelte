@@ -12,15 +12,6 @@
     { n: "100%", l: "Youth-Led\nResearch" },
   ];
   const statColors = ["text-yhan-orange", "text-yhan-cyan", "text-yhan-red", "text-yhan-yellow"];
-
-  const borderColors = ["border-t-yhan-orange", "border-t-yhan-yellow", "border-t-yhan-cyan", "border-t-yhan-red"];
-
-  const impactBoxes = [
-    { n: "60+", l: "Underserved schoolgirls in Afghanistan joined our global peer support WhatsApp community.", color: "text-yhan-orange" },
-    { n: "Hubs", l: "Developed student-led Mental Health Resource Hubs for peer support.", color: "text-yhan-yellow" },
-    { n: "5", l: "Schools where we have created dedicated quiet study spaces.", color: "text-yhan-cyan" },
-    { n: "✓", l: "Supporting youth-led research through peer surveys and policy analysis.", color: "text-yhan-red" },
-  ];
 </script>
 
 <ColorBar />
@@ -69,9 +60,9 @@
 
   <div class="relative z-10 w-full flex justify-center mt-[10px] md:mt-[20px]">
     <div class="grid grid-cols-2 md:grid-cols-4 rounded-[24px] overflow-hidden border-[1.5px] border-yhan-border bg-yhan-white shadow-[0_8px_30px_rgba(35,44,61,.06)] w-full max-w-[900px]">
-      {#each stats as s, i}
-        <div class={`py-[24px] md:py-[32px] px-[16px] text-center flex-1 border-yhan-border ${i < 2 ? 'border-b-[1.5px] md:border-b-0' : ''} ${i % 2 === 0 ? 'border-r-[1.5px]' : 'border-r-0'} ${i < 3 ? 'md:border-r-[1.5px]' : 'md:border-r-0'}`}>
-          <div class={`font-serif font-black text-[2.2rem] md:text-[2.8rem] leading-none mb-[8px] ${statColors[i]}`}>
+      {#each stats as s, i (i)}
+        <div class="py-[24px] md:py-[32px] px-[16px] text-center flex-1 border-yhan-border {i < 2 ? 'border-b-[1.5px] md:border-b-0' : ''} {i % 2 === 0 ? 'border-r-[1.5px]' : 'border-r-0'} {i < 3 ? 'md:border-r-[1.5px]' : 'md:border-r-0'}">
+          <div class="font-serif font-black text-[2.2rem] md:text-[2.8rem] leading-none mb-[8px] {statColors[i]}">
             {s.n}
           </div>
           <div class="font-sans text-[0.8rem] md:text-[0.9rem] font-bold text-yhan-mid mt-1 leading-[1.4] whitespace-pre-line px-2">

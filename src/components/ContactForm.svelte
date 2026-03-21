@@ -1,11 +1,11 @@
 <script lang="ts">
-  let form = {
+  let form = $state({
     firstName: "",
     lastName: "",
     email: "",
     topic: "",
     message: "",
-  };
+  });
 
   function handleSubmit() {
     const mailto = `mailto:ayrasaraidhillon@gmail.com?subject=${encodeURIComponent(
@@ -30,15 +30,17 @@
 
   <div class="grid grid-cols-2 gap-[12px] mb-[14px]">
     <div>
-      <label class={labelClass}>First Name</label>
+      <label class={labelClass} for="firstName">First Name</label>
       <input
+        id="firstName"
         class={inputClass}
         bind:value={form.firstName}
       />
     </div>
     <div>
-      <label class={labelClass}>Last Name</label>
+      <label class={labelClass} for="lastName">Last Name</label>
       <input
+        id="lastName"
         class={inputClass}
         bind:value={form.lastName}
       />
@@ -46,8 +48,9 @@
   </div>
 
   <div class="mb-[14px]">
-    <label class={labelClass}>Email</label>
+    <label class={labelClass} for="email">Email</label>
     <input
+      id="email"
       class={inputClass}
       type="email"
       placeholder="you@school.com"
@@ -56,21 +59,23 @@
   </div>
 
   <div class="mb-[14px]">
-    <label class={labelClass}>I'm reaching out about</label>
+    <label class={labelClass} for="topic">I'm reaching out about</label>
     <select
+      id="topic"
       class="{inputClass} appearance-none"
       bind:value={form.topic}
     >
       <option value="">Select a topic...</option>
-      {#each ["Starting a YHAN Chapter", "Ambassador Application", "School / Organization Partnership", "General Inquiry", "Media & Press"] as o}
+      {#each ["Starting a YHAN Chapter", "Ambassador Application", "School / Organization Partnership", "General Inquiry", "Media & Press"] as o (o)}
         <option value={o}>{o}</option>
       {/each}
     </select>
   </div>
 
   <div class="mb-[14px]">
-    <label class={labelClass}>Message</label>
+    <label class={labelClass} for="message">Message</label>
     <textarea
+      id="message"
       class="{inputClass} resize-y"
       rows="4"
       placeholder="Tell us about yourself and what you're hoping to do..."
@@ -79,7 +84,7 @@
   </div>
 
   <button
-    on:click={handleSubmit}
+    onclick={handleSubmit}
     class="w-full py-[14px] bg-yhan-orange text-white border-none rounded-[10px] font-sans font-extrabold text-[0.93rem] cursor-pointer mt-[6px]"
   >
     Send Message →

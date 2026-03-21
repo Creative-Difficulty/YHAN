@@ -1,7 +1,13 @@
 <script lang="ts">
-  export let topColor: string;
-  export let bottomColor: string;
-  export let direction: "down" | "up" = "down";
+  let {
+    topColor,
+    bottomColor,
+    direction = "down",
+  }: {
+    topColor: string;
+    bottomColor: string;
+    direction?: "down" | "up";
+  } = $props();
 </script>
 
 <div class="w-full relative h-[40px] md:h-[60px] overflow-hidden -mt-[1px] -mb-[1px]">

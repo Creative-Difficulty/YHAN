@@ -28,7 +28,7 @@
 
 <svelte:window onresize={handleResize} />
 
-<header class={`fixed top-[5px] left-0 right-0 z-[9999] border-b-[1.5px] border-yhan-border transition-colors duration-300 ${isOpen ? 'bg-white' : 'bg-white/95 backdrop-blur-[12px]'}`}>
+<header class="fixed top-[5px] left-0 right-0 z-[9999] border-b-[1.5px] border-yhan-border transition-colors duration-300 {isOpen ? 'bg-white' : 'bg-white/95 backdrop-blur-[12px]'}">
   <div class="flex items-center justify-between px-5 md:px-[60px] h-[70px]">
     
     <!-- Brand / Logo -->
@@ -39,11 +39,11 @@
     <!-- Desktop Navigation -->
     <nav class="hidden md:flex items-center gap-[28px]">
       <ul class="flex items-center gap-[28px] list-none m-0 p-0">
-        {#each NAV_LINKS as { label, href, page }}
+        {#each NAV_LINKS as { label, href, page } (page)}
           <li>
             <a
               {href}
-              class={`font-sans text-[0.9rem] font-bold no-underline transition-colors ${activePage === page ? 'text-yhan-orange' : 'text-yhan-mid hover:text-yhan-navy'}`}
+              class="font-sans text-[0.9rem] font-bold no-underline transition-colors {activePage === page ? 'text-yhan-orange' : 'text-yhan-mid hover:text-yhan-navy'}"
             >
               {label}
             </a>
@@ -67,23 +67,23 @@
       aria-expanded={isOpen}
       onclick={toggleMenu}
     >
-      <span class={`w-6 h-[2.5px] bg-current rounded-full transition-all duration-300 origin-center ${isOpen ? 'translate-y-[7.5px] rotate-45' : ''}`}></span>
-      <span class={`h-[2.5px] bg-current rounded-full transition-all duration-300 ${isOpen ? 'opacity-0 -translate-x-2 w-6' : 'w-5'}`}></span>
-      <span class={`w-6 h-[2.5px] bg-current rounded-full transition-all duration-300 origin-center ${isOpen ? '-translate-y-[7.5px] -rotate-45' : ''}`}></span>
+      <span class="w-6 h-[2.5px] bg-current rounded-full transition-all duration-300 origin-center {isOpen ? 'translate-y-[7.5px] rotate-45' : ''}"></span>
+      <span class="h-[2.5px] bg-current rounded-full transition-all duration-300 {isOpen ? 'opacity-0 -translate-x-2 w-6' : 'w-5'}"></span>
+      <span class="w-6 h-[2.5px] bg-current rounded-full transition-all duration-300 origin-center {isOpen ? '-translate-y-[7.5px] -rotate-45' : ''}"></span>
     </button>
   </div>
 
   <!-- Mobile Full-Screen Menu Overlay -->
   <div 
-    class={`fixed inset-0 top-[70px] bg-white h-[calc(100vh-70px)] z-40 transform transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] md:hidden flex flex-col px-6 py-8 overflow-y-auto ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
+    class="fixed inset-0 top-[70px] bg-white h-[calc(100vh-70px)] z-40 transform transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] md:hidden flex flex-col px-6 py-8 overflow-y-auto {isOpen ? 'translate-x-0' : 'translate-x-full'}"
   >
     <ul class="flex flex-col list-none m-0 p-0 mb-8 w-full">
-      {#each NAV_LINKS as { label, href, page }}
+      {#each NAV_LINKS as { label, href, page } (page)}
         <li class="border-b-[1.5px] border-yhan-border">
           <a
             {href}
             onclick={toggleMenu}
-            class={`font-sans text-[1.5rem] font-black no-underline block py-5 ${activePage === page ? 'text-yhan-orange' : 'text-yhan-navy'}`}
+            class="font-sans text-[1.5rem] font-black no-underline block py-5 {activePage === page ? 'text-yhan-orange' : 'text-yhan-navy'}"
           >
             {label}
           </a>

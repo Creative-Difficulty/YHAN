@@ -44,9 +44,9 @@
         { n: "7",    l: "Active Chapters",   color: "text-yhan-orange" },
         { n: "28",   l: "Schools",            color: "text-yhan-cyan" },
         { n: "15K+", l: "Students Reached",   color: "text-yhan-yellow" },
-      ] as s, i}
-        <div class={`flex-1 py-[20px] text-center ${i < 2 ? 'sm:border-r-[1.5px] border-b-[1.5px] sm:border-b-0 border-yhan-border' : ''}`}>
-          <div class={`font-serif font-black text-[2rem] leading-none ${s.color}`}>
+      ] as s, i (i)}
+        <div class="flex-1 py-[20px] text-center {i < 2 ? 'sm:border-r-[1.5px] border-b-[1.5px] sm:border-b-0 border-yhan-border' : ''}">
+          <div class="font-serif font-black text-[2rem] leading-none {s.color}">
             {s.n}
           </div>
           <div class="font-sans text-[0.72rem] font-bold text-yhan-mid mt-[4px]">
