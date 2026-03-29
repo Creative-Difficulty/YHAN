@@ -89,47 +89,6 @@
     use:leafletMap={chapters}
     class="w-full h-[480px] rounded-[24px] overflow-hidden shadow-[0_8px_40px_rgba(35,44,61,0.12)] border-[1.5px] border-yan-border"
   ></div>
-
-  <!-- List -->
-  <div class="mt-[48px]">
-    <h3 class="font-serif font-bold text-[1.3rem] text-yan-navy mb-[20px]">
-      All Chapters
-    </h3>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[18px]">
-      {#each chapters as ch (ch.id)}
-        {@const active = selectedId === ch.id}
-        <button
-          type="button"
-          onclick={() => (selectedId = ch.id)}
-          class="text-left w-full h-full flex flex-col bg-yan-white border-[1.5px] border-l-[4px] rounded-[18px] py-[22px] px-[24px] cursor-pointer transition-all duration-200 {active ? `${ch.twBorderClass} ${ch.twBorderLClass} ${ch.twShadowClass} -translate-y-[4px]` : 'border-yan-border border-l-yan-border shadow-[0_2px_10px_rgba(35,44,61,0.05)] translate-y-0 hover:-translate-y-[2px]'}"
-        >
-          <div class="flex items-start justify-between gap-[12px] w-full mb-[12px]">
-            <div class="flex items-center gap-[12px]">
-              <span class="text-[1.8rem] leading-none">{ch.flag}</span>
-              <div>
-                <div class="font-serif font-bold text-[1.1rem] text-yan-navy leading-tight">
-                  {ch.city}
-                </div>
-                <div class="font-sans font-medium text-[0.82rem] text-yan-mid">
-                  {ch.country}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="font-sans text-[0.8rem] text-yan-mid font-semibold mb-[14px]">
-            {ch.schools} schools · {ch.students.toLocaleString()} students · Est. {ch.founded}
-          </div>
-
-          <div class="mt-auto pt-[14px] border-t border-yan-border font-sans text-[0.85rem] text-yan-mid leading-[1.65] font-medium flex items-start gap-[8px]">
-            <span class="{ch.twTextClass} text-[1rem] mt-[1px] shrink-0">✦</span>
-            {ch.highlight}
-          </div>
-        </button>
-      {/each}
-    </div>
-  </div>
 </div>
 
 <style>
