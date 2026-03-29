@@ -15,7 +15,7 @@
       name: "Jayvant Rajesh",
       role: "Co-Founder",
       bio: "Jayvant Rajesh co-founded YAN driven by a desire to create meaningful community impact and ensure young people have a seat at the table when it comes to community issues. Through his work with YAN, he strives to bridge the gap in youth representation and empower students worldwide to shape solutions for their own well-being.",
-      email: "",
+      email: "jayvant.rajesh@gmail.com",
       image: "/jayvant.png",
       twBg: "bg-yan-cyan",
       twShadow: "shadow-[0_6px_20px_rgba(41,169,193,0.3)]",
@@ -74,7 +74,7 @@
       <H2>Meet the Founders</H2>
     </div>
     
-    {#each founders as founder, i}
+    {#each founders as founder, i (founder)}
       <div class="flex flex-col {i % 2 === 1 ? 'lg:flex-row-reverse' : ''} lg:grid lg:grid-cols-[420px_1fr] gap-[40px] md:gap-[72px] items-center py-[60px] md:py-[80px] text-center lg:text-left {i < founders.length - 1 ? 'border-b-[1.5px] border-yan-border' : ''}">
         
         <!-- Founder Image Block -->

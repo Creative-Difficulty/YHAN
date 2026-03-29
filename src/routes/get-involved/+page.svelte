@@ -40,8 +40,42 @@
   </div>
 </section>
 
-<!-- CTA -->
+<!-- PATHWAYS -->
 <section class="py-[60px] md:py-[90px] px-6 md:px-[60px] bg-yan-white">
+  <div class="max-w-[1000px] mx-auto">
+    <div class="text-center mb-[40px]">
+      <H2>Choose Your Pathway</H2>
+      <p class="font-sans text-[1.05rem] leading-[1.82] text-yan-mid font-medium mt-[16px] max-w-[700px] mx-auto">
+        There are two main ways to make an impact through your chapter:
+      </p>
+    </div>
+    
+    <div class="grid md:grid-cols-2 gap-[32px]">
+      <!-- Pathway 1 -->
+      <div class="bg-yan-offwhite rounded-[24px] p-[32px] md:p-[40px] border border-yan-navy/5 shadow-sm">
+        <h3 class="font-sans font-black text-[1.5rem] leading-[1.2] text-yan-navy mb-[16px]">
+          Pathway 1: Collaborate with School Leaders
+        </h3>
+        <p class="font-sans text-[1.05rem] leading-[1.82] text-yan-mid font-medium">
+          Partner with your principal or other school staff to survey students at your school. Analyze the responses, create a clear report summarizing key findings, and present it to your school leadership. Then design and implement a project that addresses one of the gaps or issues you uncovered.
+        </p>
+      </div>
+
+      <!-- Pathway 2 -->
+      <div class="bg-yan-offwhite rounded-[24px] p-[32px] md:p-[40px] border border-yan-navy/5 shadow-sm">
+        <h3 class="font-sans font-black text-[1.5rem] leading-[1.2] text-yan-navy mb-[16px]">
+          Pathway 2: Research Policies and Change Independently
+        </h3>
+        <p class="font-sans text-[1.05rem] leading-[1.82] text-yan-mid font-medium">
+          Examine your school or district policies such as student handbooks or publicly available documents and identify areas where students may not be fully supported. Summarize your findings in a concise briefing and if you choose, present it to school leaders. Survey at least 40 peers on the same topic and then develop a project or initiative that directly responds to the gaps you discovered.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-[60px] md:py-[90px] px-6 md:px-[60px] bg-yan-offwhite">
   <div class="max-w-[800px] mx-auto text-center">
     <H2>Ready to start your chapter?</H2>
     <p class="font-sans text-[1.05rem] leading-[1.82] text-yan-mid font-medium mt-[20px] max-w-[700px] mx-auto">
