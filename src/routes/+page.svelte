@@ -6,10 +6,10 @@
   import H2 from "$components/H2.svelte";
 
   const stats = [
-    { n: "60+", l: "Students supported" },
-    { n: "Hubs", l: "Mental Health\nResources" },
-    { n: "5", l: "Schools with\nQuiet Spaces" },
-    { n: "100%", l: "Youth-Led\nResearch" },
+    { n: "45K+", l: "Students Reached" },
+    { n: "25+", l: "Engaged Schools" },
+    { n: "6", l: "Countries" },
+    { n: "100%", l: "Youth-Led" },
   ];
   const statColors = ["text-yhan-orange", "text-yhan-cyan", "text-yhan-red", "text-yhan-yellow"];
 </script>
