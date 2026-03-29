@@ -35,7 +35,8 @@
     
     <!-- Brand / Logo -->
     <a href="/" class="flex items-center gap-[10px] no-underline relative z-50 shrink-0">
-      <LogoText sizeClass="text-[0.85rem] sm:text-[1rem] lg:text-[1.1rem]" />
+      <img src="/favicon.ico?v=2" alt="YAN Logo" class="w-[50px] h-[50px] sm:w-[50px] sm:h-[50px] object-contain" />
+      <LogoText sizeClass="text-[1rem] sm:text-[1.1rem] lg:text-[1.2rem]" />
     </a>
 
     <!-- Desktop Navigation -->

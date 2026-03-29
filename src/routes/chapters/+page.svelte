@@ -31,13 +31,13 @@
       YAN chapters are active in 6 countries, reaching 45,000+ students across 25+ engaged schools. Each chapter is led by a local student ambassador who drives surveys, data collection, and policy advocacy in their community.
     </p>
 
-    <div class="flex flex-col sm:flex-row gap-0 mt-[44px] rounded-[16px] overflow-hidden border-[1.5px] border-yan-border bg-yan-white shadow-[0_4px_20px_rgba(35,44,61,0.06)] max-w-[520px] mx-auto">
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-0 mt-[44px] rounded-[16px] overflow-hidden border-[1.5px] border-yan-border bg-yan-white shadow-[0_4px_20px_rgba(35,44,61,0.06)] max-w-[520px] mx-auto">
       {#each [
         { n: "6",    l: "Active Chapters",   color: "text-yan-orange" },
         { n: "25+",  l: "Engaged Schools",   color: "text-yan-cyan" },
         { n: "45K+", l: "Students Reached",  color: "text-yan-yellow" },
       ] as s, i (i)}
-        <div class="flex-1 py-[20px] text-center {i < 2 ? 'sm:border-r-[1.5px] border-b-[1.5px] sm:border-b-0 border-yan-border' : ''}">
+        <div class="py-[20px] px-[8px] text-center {i === 0 ? 'border-r-[1.5px] border-b-[1.5px] sm:border-b-0 border-yan-border' : ''} {i === 1 ? 'sm:border-r-[1.5px] border-b-[1.5px] sm:border-b-0 border-yan-border' : ''} {i === 2 ? 'col-span-2 sm:col-span-1 border-yan-border' : ''}">
           <div class="font-serif font-black text-[2rem] leading-none {s.color}">
             {s.n}
           </div>

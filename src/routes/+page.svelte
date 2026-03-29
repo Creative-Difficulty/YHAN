@@ -1,13 +1,6 @@
 <script lang="ts">
   import H2 from "$components/H2.svelte";
-
-  const stats = [
-    { n: "45K+", l: "Students Reached" },
-    { n: "25+", l: "Engaged Schools" },
-    { n: "6", l: "Countries" },
-    { n: "100%", l: "Youth-Led" },
-  ];
-  const statColors = ["text-yan-orange", "text-yan-cyan", "text-yan-red", "text-yan-yellow"];
+  import StatsGrid from "$components/StatsGrid.svelte";
 </script>
 
 <!-- HERO -->
@@ -49,45 +42,37 @@
     </div>
   </div>
 
-  <div class="relative z-10 w-full flex justify-center mt-[10px] md:mt-[20px]">
-    <div class="grid grid-cols-2 md:grid-cols-4 rounded-[24px] overflow-hidden border-[1.5px] border-yan-border bg-yan-white shadow-[0_8px_30px_rgba(35,44,61,.06)] w-full max-w-[900px]">
-      {#each stats as s, i (i)}
-        <div class="py-[24px] md:py-[32px] px-[16px] text-center flex-1 border-yan-border {i < 2 ? 'border-b-[1.5px] md:border-b-0' : ''} {i % 2 === 0 ? 'border-r-[1.5px]' : 'border-r-0'} {i < 3 ? 'md:border-r-[1.5px]' : 'md:border-r-0'}">
-          <div class="font-serif font-black text-[2.2rem] md:text-[2.8rem] leading-none mb-[8px] {statColors[i]}">
-            {s.n}
-          </div>
-          <div class="font-sans text-[0.8rem] md:text-[0.9rem] font-bold text-yan-mid mt-1 leading-[1.4] whitespace-pre-line px-2">
-            {s.l}
-          </div>
-        </div>
-      {/each}
-    </div>
-  </div>
+  <StatsGrid />
 </section>
 
 <!-- BENEFITS -->
 <section class="py-[60px] md:py-[90px] px-6 md:px-[60px] bg-yan-white">
   <div class="max-w-[800px] mx-auto text-center">
     <H2>What can you get from being a chapter ambassador?</H2>
-    <p class="font-sans text-[1.05rem] leading-[1.82] text-yan-mid font-medium mt-[20px] max-w-[700px] mx-auto">
-      Starting a chapter helps students develop:
-    </p>
-    <ul class="font-sans text-[1.05rem] leading-[1.82] text-yan-mid font-medium mt-[12px] max-w-[500px] mx-auto list-disc list-inside space-y-[6px]">
-      <li>Research and data analysis skills</li>
-      <li>Communication and leadership skills</li>
-      <li>Problem-solving abilities through real community projects</li>
-    </ul>
-    <p class="font-sans text-[1.05rem] leading-[1.82] text-yan-mid font-medium mt-[24px] max-w-[700px] mx-auto">
-      It also shows initiative and community impact, which strengthens college or scholarship applications!
-    </p>
     
-    <a
-      href="https://docs.google.com/forms/d/e/1FAIpQLSdoOTqhgSYTYmk_ldiXBlzkqMX20mMCwuAk2XM-KHYZJvbRqg/viewform?usp=dialog"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="inline-flex items-center justify-center gap-[8px] py-[16px] px-[32px] rounded-full font-sans font-extrabold text-[0.95rem] no-underline bg-yan-orange text-white shadow-[0_6px_20px_rgba(233,113,50,.28)] hover:opacity-90 transition-opacity mt-[32px]"
-    >
-      Start Your Own Chapter
-    </a>
+    <div class="inline-block text-left mt-[24px] max-w-[600px]">
+      <p class="font-sans text-[1.05rem] leading-[1.82] text-yan-mid font-medium">
+        Starting a chapter helps students develop:
+      </p>
+      <ul class="font-sans text-[1.05rem] leading-[1.82] text-yan-mid font-medium mt-[12px] ml-[24px] list-disc space-y-[6px]">
+        <li>Research and data analysis skills</li>
+        <li>Communication and leadership skills</li>
+        <li>Problem-solving abilities through real community projects</li>
+      </ul>
+      <p class="font-sans text-[1.05rem] leading-[1.82] text-yan-mid font-medium mt-[24px]">
+        It also shows initiative and community impact, which strengthens college or scholarship applications!
+      </p>
+    </div>
+    
+    <div class="mt-[36px]">
+      <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLSdoOTqhgSYTYmk_ldiXBlzkqMX20mMCwuAk2XM-KHYZJvbRqg/viewform?usp=dialog"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center justify-center gap-[8px] py-[16px] px-[32px] rounded-full font-sans font-extrabold text-[0.95rem] no-underline bg-yan-orange text-white shadow-[0_6px_20px_rgba(233,113,50,.28)] hover:opacity-90 transition-opacity"
+      >
+        Start Your Own Chapter
+      </a>
+    </div>
   </div>
 </section>
