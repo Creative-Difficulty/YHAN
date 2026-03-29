@@ -1,13 +1,15 @@
 <script lang="ts">
   import LogoText from "$components/LogoText.svelte";
-  let { activePage } = $props<{ activePage: "home" | "team" | "chapters" }>();
+  let { activePage } = $props<{ activePage: "home" | "about" | "chapters" | "impact" | "get-involved" }>();
 
   let isOpen = $state(false);
 
   const NAV_LINKS = [
-    { label: "Home",     href: "/",          page: "home" },
-    { label: "Team",     href: "/team",      page: "team" },
-    { label: "Chapters", href: "/chapters",  page: "chapters" },
+    { label: "Home",         href: "/",              page: "home" },
+    { label: "About",        href: "/about",         page: "about" },
+    { label: "Chapters",     href: "/chapters",      page: "chapters" },
+    { label: "Impact",       href: "/impact",        page: "impact" },
+    { label: "Get Involved", href: "/get-involved",  page: "get-involved" },
   ];
 
   function toggleMenu() {
@@ -19,7 +21,7 @@
 
   function handleResize() {
     if (typeof window !== 'undefined') {
-      if (window.innerWidth >= 768 && isOpen) {
+      if (window.innerWidth >= 1024 && isOpen) {
         toggleMenu();
       }
     }
@@ -28,22 +30,22 @@
 
 <svelte:window onresize={handleResize} />
 
-<header class="fixed top-[5px] left-0 right-0 z-[9999] border-b-[1.5px] border-yhan-border transition-colors duration-300 {isOpen ? 'bg-white' : 'bg-white/95 backdrop-blur-[12px]'}">
-  <div class="flex items-center justify-between px-5 md:px-[60px] h-[70px]">
+<header class="fixed top-[5px] left-0 right-0 z-[9999] border-b-[1.5px] border-yan-border transition-colors duration-300 {isOpen ? 'bg-white' : 'bg-white/95 backdrop-blur-[12px]'}">
+  <div class="flex items-center justify-between px-5 lg:px-[60px] h-[70px]">
     
     <!-- Brand / Logo -->
     <a href="/" class="flex items-center gap-[10px] no-underline relative z-50 shrink-0">
-      <LogoText sizeClass="text-[0.95rem] sm:text-[1.1rem]" />
+      <LogoText sizeClass="text-[0.85rem] sm:text-[1rem] lg:text-[1.1rem]" />
     </a>
 
     <!-- Desktop Navigation -->
-    <nav class="hidden md:flex items-center gap-[28px]">
-      <ul class="flex items-center gap-[28px] list-none m-0 p-0">
+    <nav class="hidden lg:flex items-center gap-[20px] xl:gap-[28px]">
+      <ul class="flex items-center gap-[20px] xl:gap-[28px] list-none m-0 p-0">
         {#each NAV_LINKS as { label, href, page } (page)}
           <li>
             <a
               {href}
-              class="font-sans text-[0.9rem] font-bold no-underline transition-colors {activePage === page ? 'text-yhan-orange' : 'text-yhan-mid hover:text-yhan-navy'}"
+              class="font-sans text-[0.85rem] xl:text-[0.9rem] font-bold no-underline transition-colors whitespace-nowrap {activePage === page ? 'text-yan-orange' : 'text-yan-mid hover:text-yan-navy'}"
             >
               {label}
             </a>
@@ -51,10 +53,12 @@
         {/each}
         <li>
           <a
-            href="#contact"
-            class="font-sans bg-yhan-orange text-white py-[10px] px-[22px] rounded-full font-extrabold text-[0.9rem] no-underline hover:bg-yhan-orange/90 transition-colors shadow-[0_2px_10px_rgba(233,113,50,0.2)]"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSdoOTqhgSYTYmk_ldiXBlzkqMX20mMCwuAk2XM-KHYZJvbRqg/viewform?usp=dialog"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="font-sans bg-yan-orange text-white py-[10px] px-[18px] xl:px-[22px] rounded-full font-extrabold text-[0.85rem] xl:text-[0.9rem] no-underline hover:bg-yan-orange/90 transition-colors shadow-[0_2px_10px_rgba(233,113,50,0.2)] whitespace-nowrap"
           >
-            Get in Touch
+            Start a Chapter
           </a>
         </li>
       </ul>
@@ -62,7 +66,7 @@
 
     <!-- Mobile Menu Toggle Button -->
     <button 
-      class="md:hidden relative z-50 w-10 h-10 flex flex-col justify-center items-end gap-[5px] text-yhan-navy cursor-pointer focus:outline-none"
+      class="lg:hidden relative z-50 w-10 h-10 flex flex-col justify-center items-end gap-[5px] text-yan-navy cursor-pointer focus:outline-none"
       aria-label="Toggle mobile menu"
       aria-expanded={isOpen}
       onclick={toggleMenu}
@@ -75,15 +79,15 @@
 
   <!-- Mobile Full-Screen Menu Overlay -->
   <div 
-    class="fixed inset-0 top-[70px] bg-white h-[calc(100vh-70px)] z-40 transform transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] md:hidden flex flex-col px-6 py-8 overflow-y-auto {isOpen ? 'translate-x-0' : 'translate-x-full'}"
+    class="fixed inset-0 top-[70px] bg-white h-[calc(100vh-70px)] z-40 transform transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] lg:hidden flex flex-col px-6 py-8 overflow-y-auto {isOpen ? 'translate-x-0' : 'translate-x-full'}"
   >
     <ul class="flex flex-col list-none m-0 p-0 mb-8 w-full">
       {#each NAV_LINKS as { label, href, page } (page)}
-        <li class="border-b-[1.5px] border-yhan-border">
+        <li class="border-b-[1.5px] border-yan-border">
           <a
             {href}
             onclick={toggleMenu}
-            class="font-sans text-[1.5rem] font-black no-underline block py-5 {activePage === page ? 'text-yhan-orange' : 'text-yhan-navy'}"
+            class="font-sans text-[1.5rem] font-black no-underline block py-5 {activePage === page ? 'text-yan-orange' : 'text-yan-navy'}"
           >
             {label}
           </a>
@@ -92,15 +96,17 @@
     </ul>
     
     <div class="mt-auto mb-10 w-full flex flex-col gap-4">
-      <div class="font-sans font-bold text-[0.7rem] tracking-[0.1em] uppercase text-yhan-mid text-center">
-        Have a question?
+      <div class="font-sans font-bold text-[0.7rem] tracking-[0.1em] uppercase text-yan-mid text-center">
+        Ready to make a difference?
       </div>
       <a
-        href="#contact"
+        href="https://docs.google.com/forms/d/e/1FAIpQLSdoOTqhgSYTYmk_ldiXBlzkqMX20mMCwuAk2XM-KHYZJvbRqg/viewform?usp=dialog"
+        target="_blank"
+        rel="noopener noreferrer"
         onclick={toggleMenu}
-        class="font-sans bg-yhan-orange text-white py-[16px] px-[28px] rounded-full font-extrabold text-[1.1rem] no-underline text-center shadow-[0_4px_20px_rgba(233,113,50,0.3)] w-full block active:scale-[0.98] transition-transform"
+        class="font-sans bg-yan-orange text-white py-[16px] px-[28px] rounded-full font-extrabold text-[1.1rem] no-underline text-center shadow-[0_4px_20px_rgba(233,113,50,0.3)] w-full block active:scale-[0.98] transition-transform"
       >
-        Get in Touch
+        Start a Chapter
       </a>
     </div>
   </div>

@@ -2,22 +2,21 @@
   import LogoText from "$components/LogoText.svelte";
   
   const NAVIGATE_LINKS = [
-    { label: "Home",     href: "/" },
-    { label: "Team",     href: "/team" },
-    { label: "Chapters", href: "/chapters" },
-    { label: "Contact",  href: "#contact" },
+    { label: "Home",         href: "/" },
+    { label: "About",        href: "/#mission" },
+    { label: "Chapters",     href: "/chapters" },
+    { label: "Impact",       href: "/impact" },
+    { label: "Get Involved", href: "/get-involved" },
   ];
 
   const INVOLVE_LINKS = [
-    { label: "Apply as Ambassador", href: "mailto:ayrasaraidhillon@gmail.com?subject=Ambassador Application" },
-    { label: "Start a Chapter",     href: "mailto:ayrasaraidhillon@gmail.com?subject=Start a Chapter" },
-    { label: "Partner with Us",     href: "mailto:ayrasaraidhillon@gmail.com?subject=Partnership Inquiry" },
+    { label: "Start a Chapter", href: "https://docs.google.com/forms/d/e/1FAIpQLSdoOTqhgSYTYmk_ldiXBlzkqMX20mMCwuAk2XM-KHYZJvbRqg/viewform?usp=dialog" },
   ];
 
   const currentYear = new Date().getFullYear();
 </script>
 
-<footer class="bg-yhan-navy px-6 md:px-[60px] pt-[64px] pb-[32px] w-full overflow-hidden">
+<footer class="bg-yan-navy px-6 md:px-[60px] pt-[64px] pb-[32px] w-full overflow-hidden">
   <div class="flex flex-col md:grid md:grid-cols-[1.6fr_1fr_1fr] gap-10 md:gap-[56px] mb-[48px]">
     <div>
       <a href="/" class="no-underline block w-full mb-[14px]">
@@ -61,7 +60,7 @@
   </div>
 
   <div class="border-t border-white/10 pt-[26px] flex flex-col md:flex-row justify-between gap-4 font-sans text-[0.76rem] text-white/30 font-semibold w-full">
-    <span>© {currentYear} Youth Health Accountability Network. All rights reserved.</span>
+    <span>© {currentYear} Youth Accountability Network. All rights reserved.</span>
     <span>Built by students, for students.</span>
   </div>
 </footer>

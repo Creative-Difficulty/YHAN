@@ -9,11 +9,10 @@
     className?: string;
   }>();
 
-  let baseTextColor = $derived(light ? "text-white" : "text-yhan-navy");
+  let baseTextColor = $derived(light ? "text-white" : "text-yan-navy");
 </script>
 
 <div class="font-sans font-black {sizeClass} tracking-[-0.01em] flex flex-wrap items-center gap-x-[4px] leading-[1.1] {className}">
-  <span class="text-yhan-orange">Youth Health</span>
-  <span class="hidden sm:inline-block {light ? 'text-white/50' : 'text-yhan-hyphen'}">-</span>
+  <span class="text-yan-orange">Youth</span>
   <span class={baseTextColor}>Accountability Network</span>
 </div>

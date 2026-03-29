@@ -16,15 +16,15 @@
     window.location.href = mailto;
   }
 
-  const inputClass = "w-full py-[12px] px-[15px] border-[1.5px] border-yhan-border rounded-[10px] font-sans text-[0.9rem] text-yhan-navy bg-yhan-offwhite outline-none font-medium box-border";
-  const labelClass = "block font-sans text-[0.7rem] font-extrabold tracking-[0.07em] uppercase text-yhan-mid mb-[6px]";
+  const inputClass = "w-full py-[12px] px-[15px] border-[1.5px] border-yan-border rounded-[10px] font-sans text-[0.9rem] text-yan-navy bg-yan-offwhite outline-none font-medium box-border";
+  const labelClass = "block font-sans text-[0.7rem] font-extrabold tracking-[0.07em] uppercase text-yan-mid mb-[6px]";
 </script>
 
-<div class="bg-yhan-white rounded-[24px] py-[44px] px-[40px] shadow-[0_4px_36px_rgba(35,44,61,0.09)] border-[1.5px] border-yhan-border">
-  <div class="font-serif font-bold text-[1.35rem] text-yhan-navy mb-[5px]">
+<div class="bg-yan-white rounded-[24px] py-[44px] px-[40px] shadow-[0_4px_36px_rgba(35,44,61,0.09)] border-[1.5px] border-yan-border">
+  <div class="font-serif font-bold text-[1.35rem] text-yan-navy mb-[5px]">
     Send us a message
   </div>
-  <div class="font-sans text-[0.87rem] text-yhan-mid mb-[26px] font-medium">
+  <div class="font-sans text-[0.87rem] text-yan-mid mb-[26px] font-medium">
     We'll get back to you as soon as we can.
   </div>
 
@@ -66,7 +66,7 @@
       bind:value={form.topic}
     >
       <option value="">Select a topic...</option>
-      {#each ["Starting a YHAN Chapter", "Ambassador Application", "School / Organization Partnership", "General Inquiry", "Media & Press"] as o (o)}
+      {#each ["Starting a YAN Chapter", "Ambassador Application", "School / Organization Partnership", "General Inquiry", "Media & Press"] as o (o)}
         <option value={o}>{o}</option>
       {/each}
     </select>
@@ -85,7 +85,7 @@
 
   <button
     onclick={handleSubmit}
-    class="w-full py-[14px] bg-yhan-orange text-white border-none rounded-[10px] font-sans font-extrabold text-[0.93rem] cursor-pointer mt-[6px]"
+    class="w-full py-[14px] bg-yan-orange text-white border-none rounded-[10px] font-sans font-extrabold text-[0.93rem] cursor-pointer mt-[6px]"
   >
     Send Message →
   </button>

@@ -1,7 +1,7 @@
 <script lang="ts">
   let { 
-    topColor = "fill-yhan-offwhite", 
-    bottomColor = "bg-yhan-navy", 
+    topColor = "fill-yan-offwhite", 
+    bottomColor = "bg-yan-navy", 
     flip = false 
   } = $props<{ 
     topColor?: string; 

@@ -87,12 +87,12 @@
   <!-- Map -->
   <div
     use:leafletMap={chapters}
-    class="w-full h-[480px] rounded-[24px] overflow-hidden shadow-[0_8px_40px_rgba(35,44,61,0.12)] border-[1.5px] border-yhan-border"
+    class="w-full h-[480px] rounded-[24px] overflow-hidden shadow-[0_8px_40px_rgba(35,44,61,0.12)] border-[1.5px] border-yan-border"
   ></div>
 
   <!-- List -->
   <div class="mt-[48px]">
-    <h3 class="font-serif font-bold text-[1.3rem] text-yhan-navy mb-[20px]">
+    <h3 class="font-serif font-bold text-[1.3rem] text-yan-navy mb-[20px]">
       All Chapters
     </h3>
 
@@ -102,32 +102,27 @@
         <button
           type="button"
           onclick={() => (selectedId = ch.id)}
-          class="text-left w-full h-full flex flex-col bg-yhan-white border-[1.5px] border-l-[4px] rounded-[18px] py-[22px] px-[24px] cursor-pointer transition-all duration-200 {active ? `${ch.twBorderClass} ${ch.twBorderLClass} ${ch.twShadowClass} -translate-y-[4px]` : 'border-yhan-border border-l-yhan-border shadow-[0_2px_10px_rgba(35,44,61,0.05)] translate-y-0 hover:-translate-y-[2px]'}"
+          class="text-left w-full h-full flex flex-col bg-yan-white border-[1.5px] border-l-[4px] rounded-[18px] py-[22px] px-[24px] cursor-pointer transition-all duration-200 {active ? `${ch.twBorderClass} ${ch.twBorderLClass} ${ch.twShadowClass} -translate-y-[4px]` : 'border-yan-border border-l-yan-border shadow-[0_2px_10px_rgba(35,44,61,0.05)] translate-y-0 hover:-translate-y-[2px]'}"
         >
           <div class="flex items-start justify-between gap-[12px] w-full mb-[12px]">
             <div class="flex items-center gap-[12px]">
               <span class="text-[1.8rem] leading-none">{ch.flag}</span>
               <div>
-                <div class="font-serif font-bold text-[1.1rem] text-yhan-navy leading-tight">
+                <div class="font-serif font-bold text-[1.1rem] text-yan-navy leading-tight">
                   {ch.city}
                 </div>
-                <div class="font-sans font-medium text-[0.82rem] text-yhan-mid">
+                <div class="font-sans font-medium text-[0.82rem] text-yan-mid">
                   {ch.country}
                 </div>
               </div>
             </div>
-            <span
-              class="font-sans text-[0.65rem] font-extrabold tracking-[0.08em] uppercase py-[4px] px-[10px] rounded-full whitespace-nowrap shrink-0 {ch.status === 'Active' ? 'bg-[#eaf9f3] text-[#1a7a50] border-[1px] border-[#b2e6d0]' : 'bg-[#fff8ed] text-yhan-yellow border-[1px] border-[#f5d9a3]'}"
-            >
-              {ch.status}
-            </span>
           </div>
 
-          <div class="font-sans text-[0.8rem] text-yhan-mid font-semibold mb-[14px]">
+          <div class="font-sans text-[0.8rem] text-yan-mid font-semibold mb-[14px]">
             {ch.schools} schools · {ch.students.toLocaleString()} students · Est. {ch.founded}
           </div>
 
-          <div class="mt-auto pt-[14px] border-t border-yhan-border font-sans text-[0.85rem] text-yhan-mid leading-[1.65] font-medium flex items-start gap-[8px]">
+          <div class="mt-auto pt-[14px] border-t border-yan-border font-sans text-[0.85rem] text-yan-mid leading-[1.65] font-medium flex items-start gap-[8px]">
             <span class="{ch.twTextClass} text-[1rem] mt-[1px] shrink-0">✦</span>
             {ch.highlight}
           </div>
