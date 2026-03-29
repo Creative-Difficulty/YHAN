@@ -58,7 +58,7 @@
         });
         L.marker([ch.lat, ch.lng], { icon })
           .addTo(map)
-          .bindPopup(`<div style="font-family:'DM Sans',sans-serif;min-width:160px;"><div style="font-weight:900;font-size:1rem;color:#232C3D;margin-bottom:4px;">${ch.flag} ${ch.city}</div><div style="font-size:0.78rem;color:#5a6478;margin-bottom:8px;">${ch.country}</div><div style="font-size:0.78rem;color:#232C3D;font-weight:700;">${ch.schools} schools · ${ch.students.toLocaleString()} students</div></div>`, { closeButton: false })
+          .bindPopup(`<div style="font-family:'DM Sans',sans-serif;min-width:160px;"><div style="font-weight:900;font-size:1rem;color:#232C3D;margin-bottom:4px;">${ch.flag} ${ch.city}</div><div style="font-size:0.78rem;color:#5a6478;margin-bottom:8px;">${ch.country}</div><div style="font-size:0.78rem;color:#232C3D;font-weight:700;">${ch.schools} ${ch.schools > 1  ? "schools" : "school"} · ${ch.students.toLocaleString()} students</div></div>`, { closeButton: false })
           .on("click", () => {
             selectedId = ch.id;
           });
