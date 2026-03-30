@@ -17,7 +17,7 @@
 </script>
 
 <footer class="bg-yan-navy px-6 md:px-[60px] pt-[64px] pb-[32px] w-full overflow-hidden">
-  <div class="flex flex-col md:grid md:grid-cols-[1.6fr_1fr_1fr] gap-10 md:gap-[56px] mb-[48px]">
+  <div class="flex flex-col md:grid md:grid-cols-[1.6fr_1fr_1fr_1fr] gap-10 md:gap-[56px] mb-[48px]">
     <div>
       <a href="/" class="no-underline block w-full mb-[14px]">
         <LogoText light={true} sizeClass="text-[0.95rem]" />
@@ -50,11 +50,24 @@
       <ul class="list-none p-0 m-0 flex flex-col gap-[10px]">
         {#each INVOLVE_LINKS as { label, href }}
           <li>
-            <a {href} class="font-sans text-white/40 no-underline text-[0.85rem] font-semibold break-words">
+            <a {href} target="_blank" rel="noopener noreferrer" class="font-sans text-white/40 no-underline text-[0.85rem] font-semibold break-words">
               {label}
             </a>
           </li>
         {/each}
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="font-sans font-extrabold text-[0.75rem] text-white tracking-[0.1em] uppercase mb-[16px]">
+        Contact
+      </h4>
+      <ul class="list-none p-0 m-0 flex flex-col gap-[10px]">
+        <li>
+          <a href="mailto:youthaccnetwork@gmail.com" class="font-sans text-white/40 no-underline text-[0.85rem] font-semibold break-words hover:text-white transition-colors">
+            youthaccnetwork@gmail.com
+          </a>
+        </li>
       </ul>
     </div>
   </div>

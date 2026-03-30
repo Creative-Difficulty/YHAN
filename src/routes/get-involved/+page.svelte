@@ -1,5 +1,6 @@
 <script lang="ts">
   import H2 from "$components/H2.svelte";
+  import ContactForm from "$components/ContactForm.svelte";
 </script>
 
 <!-- HERO -->
@@ -29,7 +30,7 @@
     <p class="font-sans text-[1.05rem] leading-[1.82] text-yan-mid font-medium mt-[20px] max-w-[700px] mx-auto">
       Starting a chapter helps students develop:
     </p>
-    <ul class="font-sans text-[1.05rem] leading-[1.82] text-yan-mid font-medium mt-[12px] max-w-[500px] mx-auto text-left list-disc list-inside space-y-[6px]">
+    <ul class="font-sans text-[1.05rem] leading-[1.82] text-yan-mid font-medium mt-[12px] max-w-[500px] mx-auto text-center list-disc list-inside space-y-[6px]">
       <li>Research and data analysis skills</li>
       <li>Communication and leadership skills</li>
       <li>Problem-solving abilities through real community projects</li>
@@ -89,5 +90,15 @@
     >
       Start Your Own Chapter
     </a>
+  </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section id="contact" class="py-[60px] md:py-[90px] px-6 md:px-[60px] bg-yan-white">
+  <div class="max-w-[800px] mx-auto">
+    <div class="text-center mb-[40px]">
+      <H2>Get in touch</H2>
+    </div>
+    <ContactForm />
   </div>
 </section>

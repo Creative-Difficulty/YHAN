@@ -20,6 +20,15 @@
       twBg: "bg-yan-cyan",
       twShadow: "shadow-[0_6px_20px_rgba(41,169,193,0.3)]",
     },
+    {
+      name: "Christopher Huang",
+      role: "Co-Founder",
+      bio: "Christopher Huang cofounded YAN because he saw that students were being left out of the conversations that actually affect their health and community standards. He now focuses on finding the right people to lead change in their own schools, making sure students finally have the authority to speak up for their own well-being.",
+      email: "chuang19543@gmail.com",
+      image: "/chris.png",
+      twBg: "bg-yan-yellow",
+      twShadow: "shadow-[0_6px_20px_rgba(242,156,51,0.3)]",
+    },
   ];
 </script>
 

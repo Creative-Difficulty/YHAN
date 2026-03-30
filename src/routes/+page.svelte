@@ -73,6 +73,9 @@
       >
         Start Your Own Chapter
       </a>
+      <p class="font-sans text-[1.05rem] leading-[1.82] text-yan-mid font-medium mt-[24px]">
+        Have any questions? Contact us at <a href="mailto:youthaccnetwork@gmail.com" class="text-yan-orange hover:underline font-semibold">youthaccnetwork@gmail.com</a>
+      </p>
     </div>
   </div>
 </section>
